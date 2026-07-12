@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Navigate } from "react-router-dom";
+import { BrowserRouter,Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 import useAuth from './hooks/useAuth';
 import LoginPage from './features/auth/pages/LoginPage';
