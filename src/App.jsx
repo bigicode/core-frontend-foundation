@@ -2,7 +2,7 @@ import { BrowserRouter,Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 import useAuth from './hooks/useAuth';
 import LoginPage from './features/auth/pages/LoginPage';
-import Register from './features/auth/pages/RegisterPage';
+import RegisterPage from './features/auth/pages/RegisterPage';
 import ProfilePage from './features/auth/pages/ProfilePage';
 
 
