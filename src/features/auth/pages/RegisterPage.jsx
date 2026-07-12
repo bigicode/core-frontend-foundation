@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import apiClient from '../../../services/apiClient';
 
-function RegisterPage() {
+function RegisterPage({onRegisterSuccess}) {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -21,6 +21,11 @@ function RegisterPage() {
       setMessage(response.data.message);
       setIsSuccess(true);
       setFormData({ email: '', password: '', role: 'user' });
+      
+      if (onRegisterSuccess){
+        onRegisterSuccess();
+      }
+
     } catch (error) {
       const errorMsg = error.response?.data?.message || 'Registration failed';
       setMessage(errorMsg);

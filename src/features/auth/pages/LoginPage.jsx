@@ -1,7 +1,7 @@
 import { useState } from "react";
 import apiClient from "../../../services/apiClient";
 
-function LoginPage(){
+function LoginPage({onLoginSuccess}){
     const [ formData, setFormData ] = useState({
         email: '',
         password: '',
@@ -27,6 +27,11 @@ function LoginPage(){
 
             setMessage('Login successful!');
             setIsSuccess (true);
+
+        
+            if (onLoginSuccess){
+              onLoginSuccess();
+            }
 
         }catch (error){
             const errorMsg = error.response?.data?.message || 'Login failed';
